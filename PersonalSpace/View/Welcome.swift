@@ -12,6 +12,7 @@ import SwiftData
 struct WelcomeView: View {
     @State private var batteryLevel: Float = 0.0
     @State private var systemName: String = ""
+    
     let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateFormat = "h:mm"
@@ -60,8 +61,15 @@ struct WelcomeView: View {
                                 ProgressView(value: (batteryLevel) * -1)
                                     .accentColor(.white)
                             }.frame(width: (geometry.size.width/2)-40)
-                            Grid {
-                                Text("TEST")
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Image(systemName: "cloud.bolt.rain.fill").foregroundColor(.white)
+                                    Text("28°").foregroundColor(.white)
+                                    
+                                }
+                                Text("Thunderstorm").foregroundColor(.white)
+                                Text("H:33° L:23°").foregroundColor(.gray)
+    
                             }.frame(width: (geometry.size.width/2)-40)
                         }
                     }
